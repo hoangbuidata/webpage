@@ -32,19 +32,4 @@ document.addEventListener("DOMContentLoaded", function () {
       alert("Cảm ơn bạn đã đăng ký! Chúng tôi sẽ liên hệ sớm nhất.");
     });
 });
-let lastScrollTop = 0;
-const navbar = document.querySelector(".header");
 
-window.addEventListener("scroll", function () {
-  let currentScroll = window.scrollY;
-
-  if (currentScroll > lastScrollTop) {
-    navbar.classList.add("hidden");
-    navbar.classList.remove("visible");
-  } else {
-    navbar.classList.remove("hidden");
-    navbar.classList.add("visible");
-  }
-
-  lastScrollTop = currentScroll;
-});
