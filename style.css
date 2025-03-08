@@ -1,0 +1,568 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+body {
+  background-color: #f4f4f4;
+}
+/* Navbar (Header) */
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+
+  align-items: center;
+  background: transparent;
+  padding-top: 0;
+  padding-bottom: 50px;
+  padding-right: 30px;
+  padding-left: 30px;
+  z-index: 1000;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Logo */
+.logo img {
+  height: 80px;
+  background: none;
+  transition: height 0.3s ease-in-out;
+}
+
+/* Navbar Links */
+.nav {
+  display: flex;
+  gap: 30px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  font-size: 18px;
+  transition: color 0.3s ease-in-out;
+  left: 30px;
+}
+
+.nav a:hover {
+  color: #009dff;
+}
+
+/* Search Bar */
+.search-container {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 10px;
+  overflow: hidden;
+  width: 250px;
+  border: 1px solid #ddd;
+  transition: all 0.3s;
+}
+
+.search-container input {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 15px;
+  background: #f8f8f8;
+}
+
+/* Search Button */
+.search-container button {
+  background: transparent;
+  border: none;
+  padding: 12px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.search-container button i {
+  font-size: 13px;
+}
+
+/* Hover Effect */
+.search-container button:hover {
+  background: #808e9b97;
+}
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Full screen height */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  overflow: hidden;
+  background: url("images/hero.jpg") no-repeat center center/cover; /* Ensures full coverage */
+}
+
+/* Hero Overlay (for better readability) */
+.hero::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.4); /* Darker overlay for better text contrast */
+  top: 0;
+  left: 0;
+}
+
+.hero-content {
+  position: absolute; /* Keeps text above overlay */
+  color: white;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.7); /* Improved readability */
+  max-width: 800px;
+  text-align: center;
+  z-index: 2;
+  animation: fade-out linear;
+  animation-timeline: view();
+  animation-range: exit -200px;
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+/* Hero Image */
+.hero img:nth-child(1) {
+  display: none; /* Remove unnecessary extra image */
+}
+
+/* Hero Content */
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.507);
+}
+.hero-content h1 {
+  font-size: 48px;
+  font-weight: bold;
+}
+
+.hero-content p {
+  font-size: 18px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+.hero h1 {
+  font-size: 42px;
+  font-weight: bold;
+}
+
+.hero p {
+  font-size: 18px;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+/* Buttons */
+.hero-buttons {
+  margin-top: 25px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+/* Avatar Styling */
+.avatar {
+  width: 250px; /* Adjust the size */
+  height: 250px;
+  border-radius: 50%; /* Makes it rounded */
+  object-fit: cover;
+  margin-bottom: 15px; /* Space between avatar and heading */
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 100;
+}
+
+.btn {
+  display: inline-block;
+  padding: 14px 24px;
+  font-size: 16px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: all 0.3s;
+}
+
+/* Primary Button (Blue) */
+.btn-primary {
+  background-color: #009dff;
+  color: white;
+}
+
+.btn-primary:hover {
+  background-color: #0077cc;
+}
+
+/* Secondary Button (White) */
+.btn-secondary {
+  background-color: white;
+  color: black;
+  border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+  background-color: #f0f0f0;
+}
+
+/* Contact Floating Button */
+.contact-button {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: #009dff;
+  padding: 12px 16px;
+  border-radius: 50%;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.contact-button a {
+  text-decoration: none;
+  color: white;
+  font-size: 18px;
+}
+
+.contact-button:hover {
+  background-color: #0077cc;
+}
+
+/* Mission Section */
+.mission-section {
+  background-color: white;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Heading Glow Effect */
+.glow-text {
+  font-size: 36px;
+  font-weight: bold;
+  color: #002060;
+  text-shadow: 0 0 10px rgba(0, 150, 255, 0.5);
+  margin-bottom: 20px;
+}
+
+/* Mission Text */
+.mission-content p {
+  font-size: 18px;
+  color: #555;
+  max-width: 800px;
+  margin: 0 auto 20px;
+}
+
+/* Mission Grid */
+.mission-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(250px, 1fr));
+  gap: 20px;
+  max-width: 1000px;
+  margin: 40px auto 0;
+}
+
+/* Mission Card */
+.mission-card {
+  background: #f8f9fa;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.mission-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Icons */
+.icon {
+  font-size: 40px;
+  color: #009dff;
+  margin-bottom: 10px;
+}
+
+/* Card Title */
+.mission-card h3 {
+  font-size: 20px;
+  color: #002060;
+  margin-bottom: 10px;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  transition: all 1s ease-in-out;
+}
+
+.fade-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 1s ease-out;
+}
+
+.delay {
+  transition-delay: 0.5s;
+}
+.delay2 {
+  transition-delay: 0.8s;
+}
+.delay3 {
+  transition-delay: 1s;
+}
+
+.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Contact Section */
+.contact-form-section {
+  background-color: #e6f4fb; /* Light blue background */
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+/* Contact Form Container */
+.contact-form-container {
+  background: white;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 900px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+/* Contact Text */
+.contact-text {
+  flex: 1;
+}
+
+.contact-text h2 {
+  font-size: 32px;
+  color: #002060;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.contact-text p {
+  font-size: 16px;
+  color: #666;
+}
+
+/* Contact Form */
+.contact-form {
+  display: flex;
+  align-items: center;
+  background: white;
+  border-radius: 50px;
+  padding: 5px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.2);
+  flex: 1;
+}
+
+.contact-form input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 15px;
+  border-radius: 50px;
+  font-size: 16px;
+  background: none;
+}
+
+.contact-form button {
+  background: linear-gradient(to right, #002060, #009dff);
+  color: white;
+  border: none;
+  padding: 15px 25px;
+  border-radius: 50px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: 0.3s;
+}
+
+.contact-form button span {
+  font-size: 18px;
+}
+
+.contact-form button:hover {
+  background: linear-gradient(to right, #001540, #0070cc);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .contact-form-container {
+    flex-direction: column;
+    text-align: center;
+    padding: 30px;
+  }
+
+  .contact-form {
+    width: 100%;
+  }
+}
+
+/* Footer */
+.footer {
+  color: white;
+  background: #0c0c40; /* Dark blue background */
+  padding: 50px 20px;
+}
+
+.footer-container {
+  display: flex;
+  justify-content: space-between;
+  max-width: 1200px;
+  margin: auto;
+  flex-wrap: wrap;
+}
+
+/* Footer Section */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
+  margin: 10px;
+}
+
+#name {
+  font-size: 20px;
+
+  margin-bottom: 15px;
+}
+#menu {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+#register {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+.footer-section p {
+  font-size: 16px;
+  margin-bottom: 8px;
+  color: #ccc;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Social Icons */
+.social-icons {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.social-icons a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: white;
+  border-radius: 50%;
+  color: #0c0c40;
+  font-size: 20px;
+  transition: 0.3s;
+}
+
+.social-icons a:hover {
+  background: #009dff;
+  color: white;
+}
+
+/* Topics List */
+.footer-section ul {
+  list-style: none;
+}
+
+.footer-section ul li {
+  margin-bottom: 8px;
+}
+
+.footer-section ul li a {
+  color: #ccc;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer-section ul li a:hover {
+  color: white;
+}
+
+/* Subscription Form */
+.subscribe-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.subscribe-form input {
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  background: #151546e0;
+  color: white;
+  font-size: 18px;
+  margin-bottom: 10px;
+  outline: none;
+}
+
+.subscribe-form input::placeholder {
+  color: #ccc;
+}
+
+.subscribe-form button {
+  padding: 12px;
+  background: #009dff;
+  border: none;
+  color: white;
+  font-size: 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.subscribe-form button:hover {
+  background: #0077cc;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer-container {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .social-icons {
+    justify-content: center;
+  }
+}
